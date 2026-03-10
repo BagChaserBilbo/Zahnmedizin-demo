@@ -6,6 +6,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="Zahnarzt Wien – Zahnmedizin am Stadtpark"
   description="Ihre Zahnarztpraxis im 3. Bezirk – moderne Zahnmedizin mit Wiener Herzlichkeit. Prophylaxe, Implantate, Ästhetik. Jetzt Termin vereinbaren."
 >
+  <link
+    slot="head"
+    rel="preload"
+    as="image"
+    href="/images/caroline-lm-beratung.webp"
+    type="image/webp"
+    media="(min-width: 1024px)"
+  />
 
   <!-- Netlify Forms: versteckte Dummy-Form für Build-Erkennung -->
   <form name="kontakt" data-netlify="true" netlify-honeypot="bot-field" action="/danke" hidden>
@@ -74,12 +82,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           class="relative overflow-hidden rounded-sm"
           style="box-shadow: 0 8px 32px rgba(139,111,71,0.14), 0 2px 8px rgba(139,111,71,0.08);"
         >
-          <img
-            src="/images/caroline-lm-beratung.jpg"
-            alt="Zahnarzt erklärt Röntgenbild — Transparente Beratung in unserer Ordination"
-            class="w-full h-[520px] object-cover object-center"
-            loading="eager"
-          />
+          <picture>
+            <!-- Nur auf lg+ laden (1024px+) — verhindert Download auf Mobile -->
+            <source media="(min-width: 1024px)" type="image/webp" srcset="/images/caroline-lm-beratung.webp" />
+            <source media="(min-width: 1024px)" type="image/jpeg" srcset="/images/caroline-lm-beratung-1400.jpg" />
+            <img
+              src="/images/caroline-lm-beratung-1400.jpg"
+              alt="Zahnarzt erklärt Röntgenbild — Transparente Beratung in unserer Ordination"
+              class="w-full h-[520px] object-cover object-center"
+              width="1400"
+              height="1050"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </picture>
           <!-- Subtiler Farbfilm -->
           <div
             class="absolute inset-0 pointer-events-none"

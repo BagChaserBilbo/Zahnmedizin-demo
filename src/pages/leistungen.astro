@@ -122,12 +122,18 @@ const services = [
       <div class="relative overflow-hidden rounded-sm order-last lg:order-first"
         style="box-shadow: 0 8px 32px rgba(139,111,71,0.12), 0 2px 8px rgba(139,111,71,0.06);"
       >
-        <img
-          src="/images/jonathan-borba-roentgen.jpg"
-          alt="Zahnarzt analysiert 3D-Röntgenaufnahmen — modernste Diagnostik in unserer Ordination"
-          class="w-full h-72 lg:h-96 object-cover object-center"
-          loading="lazy"
-        />
+        <picture>
+          <source type="image/webp" srcset="/images/jonathan-borba-roentgen-800.webp 800w, /images/jonathan-borba-roentgen.webp 1400w" sizes="(min-width: 1024px) 50vw, 100vw" />
+          <source type="image/jpeg" srcset="/images/jonathan-borba-roentgen-800.jpg 800w, /images/jonathan-borba-roentgen-1400.jpg 1400w" sizes="(min-width: 1024px) 50vw, 100vw" />
+          <img
+            src="/images/jonathan-borba-roentgen-800.jpg"
+            alt="Zahnarzt analysiert 3D-Röntgenaufnahmen — modernste Diagnostik in unserer Ordination"
+            class="w-full h-72 lg:h-96 object-cover object-center"
+            width="1400"
+            height="934"
+            loading="lazy"
+          />
+        </picture>
         <div
           class="absolute inset-0 pointer-events-none"
           style="background: linear-gradient(to right, rgba(139,111,71,0.15) 0%, transparent 50%); mix-blend-mode: multiply;"
