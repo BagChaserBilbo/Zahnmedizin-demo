@@ -25,45 +25,78 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     class="relative texture-grain overflow-hidden"
     style="background: radial-gradient(ellipse 80% 60% at 20% 50%, rgba(139,111,71,0.10) 0%, transparent 70%), radial-gradient(ellipse 60% 80% at 80% 20%, rgba(139,111,71,0.06) 0%, transparent 70%), #FAF7F2;"
   >
-    <div class="relative z-10 max-w-7xl mx-auto px-6 py-28 md:py-40">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-20 md:py-32 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-      <!-- Badge -->
-      <span class="inline-block text-xs font-medium tracking-widest uppercase text-brand/70 mb-6 border border-brand/20 rounded-full px-3 py-1">
-        Zahnarztpraxis · 1030 Wien · Seit 2016
-      </span>
+      <!-- Text-Spalte -->
+      <div>
+        <!-- Badge -->
+        <span class="inline-block text-xs font-medium tracking-widest uppercase text-brand/70 mb-6 border border-brand/20 rounded-full px-3 py-1">
+          Zahnarztpraxis · 1030 Wien · Seit 2016
+        </span>
 
-      <!-- Headline -->
-      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-ink max-w-3xl mb-6" style="line-height: 1.08;">
-        Ihr Lächeln.<br />
-        <em class="not-italic text-brand">Wiener Herzlichkeit.</em>
-      </h1>
+        <!-- Headline -->
+        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-ink max-w-3xl mb-6" style="line-height: 1.08;">
+          Ihr Lächeln.<br />
+          <em class="not-italic text-brand">Wiener Herzlichkeit.</em>
+        </h1>
 
-      <!-- Subtext -->
-      <p class="text-ink/60 text-lg leading-body max-w-xl mb-10">
-        Moderne, evidenzbasierte Zahnmedizin in entspannter Atmosphäre — unweit des Wiener Stadtparks. Transparente Beratung, schonende Methoden, erfahrenes Team.
-      </p>
+        <!-- Subtext -->
+        <p class="text-ink/60 text-lg leading-body max-w-xl mb-10">
+          Moderne, evidenzbasierte Zahnmedizin in entspannter Atmosphäre — unweit des Wiener Stadtparks. Transparente Beratung, schonende Methoden, erfahrenes Team.
+        </p>
 
-      <!-- CTAs -->
-      <div class="flex flex-wrap gap-4">
-        <a
-          href="/kontakt"
-          class="inline-flex items-center gap-2 px-7 py-3.5 bg-brand text-surface-base text-sm font-medium rounded-sm hover:bg-brand-light active:bg-brand-dark transition-colors duration-200 focus-visible:outline-brand"
-          style="box-shadow: 0 2px 8px rgba(139,111,71,0.20);"
-        >
-          Termin vereinbaren
-        </a>
-        <a
-          href="/leistungen"
-          class="inline-flex items-center gap-2 px-7 py-3.5 border border-ink/20 text-ink text-sm font-medium rounded-sm hover:border-brand/50 hover:text-brand transition-colors duration-200 focus-visible:outline-brand"
-        >
-          Unsere Leistungen
-        </a>
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="/kontakt"
+            class="inline-flex items-center gap-2 px-7 py-3.5 bg-brand text-surface-base text-sm font-medium rounded-sm hover:bg-brand-light active:bg-brand-dark transition-colors duration-200 focus-visible:outline-brand"
+            style="box-shadow: 0 2px 8px rgba(139,111,71,0.20);"
+          >
+            Termin vereinbaren
+          </a>
+          <a
+            href="/leistungen"
+            class="inline-flex items-center gap-2 px-7 py-3.5 border border-ink/20 text-ink text-sm font-medium rounded-sm hover:border-brand/50 hover:text-brand transition-colors duration-200 focus-visible:outline-brand"
+          >
+            Unsere Leistungen
+          </a>
+        </div>
+
+        <!-- Kassen-Badge -->
+        <p class="mt-10 text-xs text-ink/40 font-medium tracking-wide uppercase">
+          Wahlarzt-Ordination &nbsp;·&nbsp; Vertragspartner ÖGK
+        </p>
       </div>
 
-      <!-- Kassen-Badge -->
-      <p class="mt-10 text-xs text-ink/40 font-medium tracking-wide uppercase">
-        Wahlarzt-Ordination &nbsp;·&nbsp; Vertragspartner ÖGK
-      </p>
+      <!-- Bild-Spalte -->
+      <div class="relative hidden lg:block">
+        <div
+          class="relative overflow-hidden rounded-sm"
+          style="box-shadow: 0 8px 32px rgba(139,111,71,0.14), 0 2px 8px rgba(139,111,71,0.08);"
+        >
+          <img
+            src="/images/caroline-lm-beratung.jpg"
+            alt="Zahnarzt erklärt Röntgenbild — Transparente Beratung in unserer Ordination"
+            class="w-full h-[520px] object-cover object-center"
+            loading="eager"
+          />
+          <!-- Subtiler Farbfilm -->
+          <div
+            class="absolute inset-0 pointer-events-none"
+            style="background: linear-gradient(to bottom, transparent 55%, rgba(139,111,71,0.18) 100%); mix-blend-mode: multiply;"
+            aria-hidden="true"
+          ></div>
+        </div>
+        <!-- Floating-Label -->
+        <div
+          class="absolute -bottom-5 -left-5 bg-surface-base border border-ink/10 rounded-sm px-5 py-4"
+          style="box-shadow: 0 4px 16px rgba(139,111,71,0.12);"
+        >
+          <p class="text-xs font-medium uppercase tracking-widest text-brand/70 mb-0.5">Transparente Beratung</p>
+          <p class="text-sm font-medium text-ink">Befund &amp; Röntgen — kostenlos</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
