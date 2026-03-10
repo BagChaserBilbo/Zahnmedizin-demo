@@ -1,0 +1,149 @@
+---
+// Netlify Forms Kontaktformular
+// Voraussetzung: Seite muss auf Netlify gehostet werden.
+// Netlify erkennt das Formular beim Build automatisch.
+// Lokaler Test: Formular-Submit funktioniert auf localhost NICHT —
+// erst auf Netlify testbar. Den Action-Redirect auf /danke prüfen.
+---
+
+<form
+  name="kontakt"
+  method="POST"
+  action="/danke"
+  netlify
+  netlify-honeypot="bot-field"
+  class="space-y-6"
+  novalidate
+>
+  <!-- Netlify: Pflichtfeld für statische Formulare -->
+  <input type="hidden" name="form-name" value="kontakt" />
+
+  <!-- Honeypot: Für Menschen unsichtbar, Bots füllen es aus -->
+  <p class="hidden" aria-hidden="true">
+    <label>Nicht ausfüllen: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+  </p>
+
+  <!-- Name (2-spaltig) -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <div>
+      <label for="vorname" class="block text-sm font-medium text-ink mb-2">
+        Vorname <span class="text-brand" aria-hidden="true">*</span>
+      </label>
+      <input
+        type="text"
+        id="vorname"
+        name="vorname"
+        required
+        autocomplete="given-name"
+        placeholder="Max"
+        class="w-full px-4 py-3 bg-surface-elevated border border-ink/15 rounded-sm text-sm text-ink placeholder:text-ink/30 hover:border-ink/30 focus:border-brand focus:ring-1 focus:ring-brand focus:outline-none transition-colors duration-200"
+      />
+    </div>
+    <div>
+      <label for="nachname" class="block text-sm font-medium text-ink mb-2">
+        Nachname <span class="text-brand" aria-hidden="true">*</span>
+      </label>
+      <input
+        type="text"
+        id="nachname"
+        name="nachname"
+        required
+        autocomplete="family-name"
+        placeholder="Mustermann"
+        class="w-full px-4 py-3 bg-surface-elevated border border-ink/15 rounded-sm text-sm text-ink placeholder:text-ink/30 hover:border-ink/30 focus:border-brand focus:ring-1 focus:ring-brand focus:outline-none transition-colors duration-200"
+      />
+    </div>
+  </div>
+
+  <!-- E-Mail -->
+  <div>
+    <label for="email" class="block text-sm font-medium text-ink mb-2">
+      E-Mail-Adresse <span class="text-brand" aria-hidden="true">*</span>
+    </label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      required
+      autocomplete="email"
+      placeholder="max@beispiel.at"
+      class="w-full px-4 py-3 bg-surface-elevated border border-ink/15 rounded-sm text-sm text-ink placeholder:text-ink/30 hover:border-ink/30 focus:border-brand focus:ring-1 focus:ring-brand focus:outline-none transition-colors duration-200"
+    />
+  </div>
+
+  <!-- Telefon (optional) -->
+  <div>
+    <label for="telefon" class="block text-sm font-medium text-ink mb-2">
+      Telefon
+      <span class="text-ink/40 font-normal text-xs ml-1">(optional)</span>
+    </label>
+    <input
+      type="tel"
+      id="telefon"
+      name="telefon"
+      autocomplete="tel"
+      placeholder="+43 660 000 0000"
+      class="w-full px-4 py-3 bg-surface-elevated border border-ink/15 rounded-sm text-sm text-ink placeholder:text-ink/30 hover:border-ink/30 focus:border-brand focus:ring-1 focus:ring-brand focus:outline-none transition-colors duration-200"
+    />
+  </div>
+
+  <!-- Nachricht -->
+  <div>
+    <label for="nachricht" class="block text-sm font-medium text-ink mb-2">
+      Nachricht <span class="text-brand" aria-hidden="true">*</span>
+    </label>
+    <textarea
+      id="nachricht"
+      name="nachricht"
+      required
+      rows="5"
+      placeholder="Ihr Anliegen, gewünschter Termin oder Fragen..."
+      class="w-full px-4 py-3 bg-surface-elevated border border-ink/15 rounded-sm text-sm text-ink placeholder:text-ink/30 hover:border-ink/30 focus:border-brand focus:ring-1 focus:ring-brand focus:outline-none resize-none transition-colors duration-200"
+    ></textarea>
+  </div>
+
+  <!-- DSGVO-Checkbox (in Österreich rechtlich erforderlich) -->
+  <div class="flex items-start gap-3">
+    <div class="flex items-center h-5 mt-0.5">
+      <input
+        type="checkbox"
+        id="dsgvo"
+        name="dsgvo"
+        required
+        class="w-4 h-4 rounded-sm border-ink/30 text-brand focus:ring-brand focus:ring-offset-surface-base accent-brand cursor-pointer"
+      />
+    </div>
+    <label for="dsgvo" class="text-sm text-ink/60 leading-relaxed cursor-pointer">
+      Ich habe die
+      <a
+        href="/datenschutz"
+        class="underline underline-offset-2 text-ink/80 hover:text-brand transition-colors duration-200"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Datenschutzerklärung
+      </a>
+      gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu.
+      <span class="text-brand" aria-hidden="true"> *</span>
+    </label>
+  </div>
+
+  <!-- Pflichtfelder-Hinweis -->
+  <p class="text-xs text-ink/40">
+    <span class="text-brand">*</span> Pflichtfelder
+  </p>
+
+  <!-- Submit -->
+  <button
+    type="submit"
+    class="inline-flex items-center gap-2 px-7 py-3 bg-brand text-surface-base text-sm font-medium rounded-sm hover:bg-brand-light active:bg-brand-dark transition-colors duration-200 focus-visible:outline-brand"
+    style="box-shadow: 0 1px 2px rgba(139,111,71,0.12);"
+  >
+    Nachricht senden
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+         stroke-linejoin="round" aria-hidden="true">
+      <path d="M5 12h14M12 5l7 7-7 7"/>
+    </svg>
+  </button>
+</form>

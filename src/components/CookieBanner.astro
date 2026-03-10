@@ -1,0 +1,151 @@
+<!--
+  DSGVO/GDPR Cookie-Banner
+  ========================
+  Consent-States in localStorage['cookie_consent']:
+    - null / nicht gesetzt → Erstbesuch → Banner anzeigen
+    - "accepted"           → Analytics aktivieren
+    - "declined"           → Analytics blockiert lassen
+
+  Analytics-Scripts DSGVO-konform einbinden:
+  <script type="text/plain" data-cookie-consent src="..."></script>
+  <script type="text/plain" data-cookie-consent>
+    // Inline-Analytics-Code
+  </script>
+
+  Diese Scripts bleiben inert (type="text/plain") bis zum Accept.
+  Bei Accept werden sie als type="text/javascript" neu eingefügt.
+-->
+
+<div
+  id="cookie-banner"
+  role="dialog"
+  aria-live="polite"
+  aria-label="Cookie-Einstellungen"
+  class="fixed bottom-0 inset-x-0 z-[9999] p-4 md:p-6 bg-surface-elevated border-t border-ink/10"
+  style="display: none; box-shadow: 0 -4px 24px rgba(29,51,41,0.10), 0 -1px 4px rgba(29,51,41,0.06);"
+>
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
+    <!-- Text -->
+    <div class="flex-1 min-w-0">
+      <p class="text-sm font-medium text-ink mb-1">Cookies &amp; Datenschutz</p>
+      <p class="text-sm text-ink/60 leading-relaxed">
+        Wir verwenden Cookies, um diese Website zu verbessern und Ihr Erlebnis zu personalisieren.
+        Mehr dazu in unserer
+        <a
+          href="/datenschutz"
+          class="underline underline-offset-2 hover:text-brand transition-colors duration-200"
+        >
+          Datenschutzerklärung
+        </a>.
+      </p>
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex gap-3 shrink-0 w-full sm:w-auto">
+      <button
+        id="cookie-decline"
+        type="button"
+        class="flex-1 sm:flex-none px-4 py-2.5 text-sm font-medium text-ink/70 bg-transparent border border-ink/20 rounded-sm hover:border-ink/40 hover:text-ink active:bg-ink/5 transition-colors duration-200 focus-visible:outline-brand"
+      >
+        Ablehnen
+      </button>
+      <button
+        id="cookie-accept"
+        type="button"
+        class="flex-1 sm:flex-none px-5 py-2.5 text-sm font-medium text-surface-base bg-brand rounded-sm hover:bg-brand-light active:bg-brand-dark transition-colors duration-200 focus-visible:outline-brand"
+        style="box-shadow: 0 1px 2px rgba(29,51,41,0.12);"
+      >
+        Alle akzeptieren
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const STORAGE_KEY = 'cookie_consent';
+    const banner = document.getElementById('cookie-banner') as HTMLElement | null;
+    const acceptBtn = document.getElementById('cookie-accept');
+    const declineBtn = document.getElementById('cookie-decline');
+
+    function getConsent(): string | null {
+      try {
+        return localStorage.getItem(STORAGE_KEY);
+      } catch {
+        return null;
+      }
+    }
+
+    function setConsent(value: string): void {
+      try {
+        localStorage.setItem(STORAGE_KEY, value);
+      } catch {
+        // Fallback: Cookie setzen wenn localStorage nicht verfügbar
+        document.cookie = `${STORAGE_KEY}=${value};max-age=31536000;path=/;SameSite=Lax`;
+      }
+    }
+
+    // Analytics-Scripts aktivieren (type="text/plain" → type="text/javascript")
+    function enableAnalytics(): void {
+      document.querySelectorAll<HTMLScriptElement>('script[data-cookie-consent]').forEach((script) => {
+        const newScript = document.createElement('script');
+        // Attribute kopieren (ohne type und data-cookie-consent)
+        Array.from(script.attributes).forEach((attr) => {
+          if (attr.name !== 'type' && attr.name !== 'data-cookie-consent') {
+            newScript.setAttribute(attr.name, attr.value);
+          }
+        });
+        newScript.type = 'text/javascript';
+        if (!script.src) {
+          newScript.textContent = script.textContent;
+        }
+        script.parentNode?.replaceChild(newScript, script);
+      });
+    }
+
+    function hideBanner(): void {
+      if (!banner) return;
+      banner.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+      banner.style.opacity = '0';
+      banner.style.transform = 'translateY(8px)';
+      setTimeout(() => {
+        banner.style.display = 'none';
+      }, 320);
+    }
+
+    function showBanner(): void {
+      if (!banner) return;
+      banner.style.display = 'block';
+      banner.style.opacity = '0';
+      banner.style.transform = 'translateY(8px)';
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          banner.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+          banner.style.opacity = '1';
+          banner.style.transform = 'translateY(0)';
+        });
+      });
+    }
+
+    // Init: Consent-Status prüfen
+    const consent = getConsent();
+    if (consent === null) {
+      showBanner();
+    } else if (consent === 'accepted') {
+      enableAnalytics();
+    }
+    // 'declined': Analytics bleibt blockiert → nichts tun
+
+    // Event-Handler
+    acceptBtn?.addEventListener('click', () => {
+      setConsent('accepted');
+      enableAnalytics();
+      hideBanner();
+    });
+
+    declineBtn?.addEventListener('click', () => {
+      setConsent('declined');
+      hideBanner();
+    });
+  })();
+</script>

@@ -1,0 +1,217 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Zahnarzt Wien – Zahnmedizin am Stadtpark"
+  description="Ihre Zahnarztpraxis im 3. Bezirk – moderne Zahnmedizin mit Wiener Herzlichkeit. Prophylaxe, Implantate, Ästhetik. Jetzt Termin vereinbaren."
+>
+
+  <!-- ═══════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════════ -->
+  <section
+    class="relative texture-grain overflow-hidden"
+    style="background: radial-gradient(ellipse 80% 60% at 20% 50%, rgba(139,111,71,0.10) 0%, transparent 70%), radial-gradient(ellipse 60% 80% at 80% 20%, rgba(139,111,71,0.06) 0%, transparent 70%), #FAF7F2;"
+  >
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-28 md:py-40">
+
+      <!-- Badge -->
+      <span class="inline-block text-xs font-medium tracking-widest uppercase text-brand/70 mb-6 border border-brand/20 rounded-full px-3 py-1">
+        Zahnarztpraxis · 1030 Wien · Seit 2016
+      </span>
+
+      <!-- Headline -->
+      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-ink max-w-3xl mb-6" style="line-height: 1.08;">
+        Ihr Lächeln.<br />
+        <em class="not-italic text-brand">Wiener Herzlichkeit.</em>
+      </h1>
+
+      <!-- Subtext -->
+      <p class="text-ink/60 text-lg leading-body max-w-xl mb-10">
+        Moderne, evidenzbasierte Zahnmedizin in entspannter Atmosphäre — unweit des Wiener Stadtparks. Transparente Beratung, schonende Methoden, erfahrenes Team.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="/kontakt"
+          class="inline-flex items-center gap-2 px-7 py-3.5 bg-brand text-surface-base text-sm font-medium rounded-sm hover:bg-brand-light active:bg-brand-dark transition-colors duration-200 focus-visible:outline-brand"
+          style="box-shadow: 0 2px 8px rgba(139,111,71,0.20);"
+        >
+          Termin vereinbaren
+        </a>
+        <a
+          href="/leistungen"
+          class="inline-flex items-center gap-2 px-7 py-3.5 border border-ink/20 text-ink text-sm font-medium rounded-sm hover:border-brand/50 hover:text-brand transition-colors duration-200 focus-visible:outline-brand"
+        >
+          Unsere Leistungen
+        </a>
+      </div>
+
+      <!-- Kassen-Badge -->
+      <p class="mt-10 text-xs text-ink/40 font-medium tracking-wide uppercase">
+        Wahlarzt-Ordination &nbsp;·&nbsp; Vertragspartner ÖGK
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       WARUM WIR — 3 USP-Karten
+  ══════════════════════════════════════════════════ -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-ink/8">
+    <div class="mb-14">
+      <span class="inline-block text-xs font-medium tracking-widest uppercase text-brand/60 mb-4">Warum Zahnmedizin am Stadtpark</span>
+      <h2 class="font-display text-3xl md:text-4xl font-light tracking-tight text-ink max-w-lg">
+        Zahngesundheit mit Wiener Sorgfalt.
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <div
+        class="relative p-8 bg-surface-elevated rounded-sm border border-ink/8 hover:border-brand/25 transition-colors duration-300"
+        style="box-shadow: 0 2px 8px rgba(139,111,71,0.06);"
+      >
+        <span class="block font-display text-6xl font-light text-brand/12 mb-6 select-none" aria-hidden="true">01</span>
+        <h3 class="font-display text-xl font-medium tracking-tight text-ink mb-3">
+          Angstpatienten willkommen
+        </h3>
+        <p class="text-sm text-ink/55 leading-body">
+          Eigene Sprechstunde mittwochs. Ruhige Atmosphäre, einfühlsames Team und moderne Schmerzfreiheitsverfahren — wir nehmen uns Zeit für Sie.
+        </p>
+      </div>
+
+      <div
+        class="relative p-8 bg-surface-elevated rounded-sm border border-ink/8 hover:border-brand/25 transition-colors duration-300"
+        style="box-shadow: 0 2px 8px rgba(139,111,71,0.06);"
+      >
+        <span class="block font-display text-6xl font-light text-brand/12 mb-6 select-none" aria-hidden="true">02</span>
+        <h3 class="font-display text-xl font-medium tracking-tight text-ink mb-3">
+          Modernste Technik
+        </h3>
+        <p class="text-sm text-ink/55 leading-body">
+          3D-Röntgen (DVT) direkt vor Ort, digitaler Zahnabdruck ohne Abdruckmaterial, und keimreduzierende Protokolle für maximale Sicherheit.
+        </p>
+      </div>
+
+      <div
+        class="relative p-8 bg-surface-elevated rounded-sm border border-ink/8 hover:border-brand/25 transition-colors duration-300"
+        style="box-shadow: 0 2px 8px rgba(139,111,71,0.06);"
+      >
+        <span class="block font-display text-6xl font-light text-brand/12 mb-6 select-none" aria-hidden="true">03</span>
+        <h3 class="font-display text-xl font-medium tracking-tight text-ink mb-3">
+          Persönliche Betreuung
+        </h3>
+        <p class="text-sm text-ink/55 leading-body">
+          Kein Fließband — Sie haben immer denselben Ansprechpartner. Transparente Beratung und individueller Kostenvoranschlag vor jeder Behandlung.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       LEISTUNGEN TEASER
+  ══════════════════════════════════════════════════ -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-ink/8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+      <div class="max-w-xl">
+        <span class="inline-block text-xs font-medium tracking-widest uppercase text-brand/60 mb-4">Leistungen</span>
+        <h2 class="font-display text-3xl md:text-4xl font-light tracking-tight text-ink">
+          Was wir für Sie tun.
+        </h2>
+        <p class="text-sm text-ink/55 leading-body mt-3">
+          Von der Vorsorge bis zur umfassenden Versorgung — abgestimmt auf Ihre Bedürfnisse.
+        </p>
+      </div>
+      <a
+        href="/leistungen"
+        class="shrink-0 text-sm font-medium text-brand hover:text-brand-light transition-colors duration-200 focus-visible:outline-brand"
+      >
+        Alle Leistungen →
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <a
+        href="/leistungen#allgemein"
+        class="group block p-8 bg-surface-elevated rounded-sm border border-ink/8 hover:border-brand/30 transition-colors duration-300 focus-visible:outline-brand"
+        style="box-shadow: 0 2px 8px rgba(139,111,71,0.06);"
+      >
+        <div class="w-10 h-10 rounded-full bg-brand/10 flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B6F47" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2C8 2 5 5.5 5 9c0 2.5 1 4.5 2 6l1 5c.3 1.2 1.4 2 2.6 2h2.8c1.2 0 2.3-.8 2.6-2l1-5c1-1.5 2-3.5 2-6 0-3.5-3-7-7-7z"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-medium tracking-tight text-ink mb-3">
+          Prophylaxe &amp; Vorsorge
+        </h3>
+        <p class="text-sm text-ink/55 leading-body mb-5">
+          Professionelle Zahnreinigung, Kariesdiagnostik und individuelle Mundhygieneberatung. Erstberatung kostenlos.
+        </p>
+        <span class="text-sm font-medium text-brand group-hover:text-brand-light transition-colors duration-200">
+          Mehr erfahren →
+        </span>
+      </a>
+
+      <a
+        href="/leistungen#implantate"
+        class="group block p-8 bg-surface-elevated rounded-sm border border-ink/8 hover:border-brand/30 transition-colors duration-300 focus-visible:outline-brand"
+        style="box-shadow: 0 2px 8px rgba(139,111,71,0.06);"
+      >
+        <div class="w-10 h-10 rounded-full bg-brand/10 flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B6F47" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19"/>
+            <line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-medium tracking-tight text-ink mb-3">
+          Zahnersatz &amp; Implantate
+        </h3>
+        <p class="text-sm text-ink/55 leading-body mb-5">
+          Kronen, Brücken und Implantate in höchster Qualität — ästhetisch, funktionell, langlebig. Ab € 2.200.
+        </p>
+        <span class="text-sm font-medium text-brand group-hover:text-brand-light transition-colors duration-200">
+          Mehr erfahren →
+        </span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CTA BANNER
+  ══════════════════════════════════════════════════ -->
+  <section class="max-w-7xl mx-auto px-6 pb-24">
+    <div
+      class="relative overflow-hidden rounded-sm px-8 py-16 md:px-16 md:py-20 texture-grain bg-brand"
+      style="box-shadow: 0 4px 16px rgba(139,111,71,0.20);"
+    >
+      <div
+        class="absolute inset-0 pointer-events-none"
+        style="background: radial-gradient(ellipse 50% 80% at 80% 50%, rgba(255,255,255,0.06) 0%, transparent 70%);"
+        aria-hidden="true"
+      ></div>
+      <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+        <div class="max-w-lg">
+          <h2 class="font-display text-3xl md:text-4xl font-light tracking-tight text-surface-base mb-4" style="line-height: 1.15;">
+            Bereit für Ihr nächstes Lächeln?
+          </h2>
+          <p class="text-surface-base/70 text-sm leading-body">
+            Vereinbaren Sie jetzt Ihren Termin — wir freuen uns auf Sie. Rückruf auf Wunsch innerhalb von 24 Stunden.
+          </p>
+        </div>
+        <a
+          href="/kontakt"
+          class="shrink-0 inline-flex items-center gap-2 px-7 py-3.5 bg-surface-base text-brand text-sm font-medium rounded-sm hover:bg-surface-elevated active:opacity-90 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-surface-base"
+          style="box-shadow: 0 2px 8px rgba(0,0,0,0.12);"
+        >
+          Termin vereinbaren
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    id: 'allgemein',
+    subtitle: 'Grundversorgung für die ganze Familie',
+    title: 'Allgemeine Zahnmedizin',
+    text: 'Erstberatung, Füllungen, Wurzelbehandlungen — alles aus einer Hand, transparent und schonend. Wir nehmen uns Zeit für Diagnose und Beratung.',
+    details: [
+      'Erstberatung & Befund — kostenlos',
+      'Professionelle Zahnreinigung — ab € 120',
+      'Kunststofffüllung — ab € 90',
+      'Wurzelbehandlung — ab € 250 pro Kanal',
+    ],
+  },
+  {
+    id: 'aesthetik',
+    subtitle: 'Ihr Wunschlächeln',
+    title: 'Ästhetische Zahnmedizin',
+    text: 'Bleaching, Veneers, unsichtbare Schienen — wir planen gemeinsam mit Ihnen Ihr ideales Ergebnis. Dr. Lena Hofer ist spezialisiert auf ästhetische Zahnmedizin.',
+    details: [
+      'Bleaching (In-Office) — ab € 350',
+      'Veneer (Keramik, pro Zahn) — ab € 750',
+      'Unsichtbare Zahnschiene (gesamter Verlauf) — ab € 2.800',
+    ],
+  },
+  {
+    id: 'implantate',
+    subtitle: 'Festsitzend wie eigene Zähne',
+    title: 'Implantologie & Prothetik',
+    text: 'Kronen, Brücken, Implantate und Prothesen in höchster Qualität — ästhetisch, funktionell und auf Ihre individuellen Bedürfnisse abgestimmt.',
+    details: [
+      'Einzelzahnimplantat inkl. Krone — ab € 2.200',
+      'Brücke (3-gliedrig, Keramik) — ab € 1.800',
+      'Totalprothese — ab € 1.200',
+    ],
+  },
+  {
+    id: 'kinder',
+    subtitle: 'Sanft von Anfang an',
+    title: 'Kinderzahnheilkunde',
+    text: 'Dr. Sara Yilmaz betreut unsere jüngsten Patientinnen und Patienten einfühlsam und spielerisch — für einen guten Start in die Zahngesundheit.',
+    details: [
+      'Untersuchung & Beratung — kostenlos',
+      'Fissurenversiegelung — ab € 40 pro Zahn',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Leistungen – Zahnmedizin am Stadtpark"
+  description="Prophylaxe, Zahnersatz, Implantate, Ästhetische Zahnmedizin und Kinderzahnheilkunde – Leistungen der Zahnarztpraxis Dr. Lena Hofer & Kollegen in Wien."
+>
+
+  <!-- ═══════════════════════════════════════════════
+       PAGE HEADER
+  ══════════════════════════════════════════════════ -->
+  <section
+    class="relative texture-grain overflow-hidden border-b border-ink/8"
+    style="background: radial-gradient(ellipse 70% 60% at 15% 50%, rgba(139,111,71,0.08) 0%, transparent 70%), #FAF7F2;"
+  >
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-20 md:py-28">
+      <span class="inline-block text-xs font-medium tracking-widest uppercase text-brand/70 mb-6">
+        Leistungen
+      </span>
+      <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-ink max-w-2xl mb-6" style="line-height: 1.1;">
+        Was wir für Sie tun.
+      </h1>
+      <p class="text-ink/60 text-lg leading-body max-w-xl">
+        Von der regelmäßigen Vorsorge bis zur komplexen prothetischen Versorgung — wir begleiten Sie auf jedem Schritt.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       LEISTUNGS-KARTEN
+  ══════════════════════════════════════════════════ -->
+  <section class="max-w-7xl mx-auto px-6 py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {services.map((service) => (
+        <div
+          id={service.id}
+          class="p-8 bg-surface-elevated rounded-sm border border-ink/8 hover:border-brand/25 transition-colors duration-300 scroll-mt-24"
+          style="box-shadow: 0 2px 8px rgba(139,111,71,0.06);"
+        >
+          <span class="inline-block text-xs font-medium uppercase tracking-widest text-brand/60 mb-3">
+            {service.subtitle}
+          </span>
+          <h2 class="font-display text-2xl font-light tracking-tight text-ink mb-4">
+            {service.title}
+          </h2>
+          <p class="text-sm text-ink/55 leading-body mb-6">{service.text}</p>
+          <ul class="space-y-2.5">
+            {service.details.map((d) => (
+              <li class="flex items-start gap-3 text-sm text-ink/70">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand/50 shrink-0 mt-1.5" aria-hidden="true"></span>
+                {d}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Preishinweis -->
+    <div class="mt-10 p-6 bg-brand/5 border border-brand/15 rounded-sm">
+      <p class="text-sm text-ink/60 leading-body">
+        <strong class="font-medium text-ink">Hinweis zu Richtpreisen:</strong> Alle angegebenen Preise sind Richtpreise. Ein individueller Kostenvoranschlag wird vor jeder Behandlung erstellt — transparent und unverbindlich.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       BESONDERHEITEN
+  ══════════════════════════════════════════════════ -->
+  <section class="max-w-7xl mx-auto px-6 py-16 border-t border-ink/8">
+    <div class="mb-10">
+      <span class="inline-block text-xs font-medium tracking-widest uppercase text-brand/60 mb-4">Besonderheiten</span>
+      <h2 class="font-display text-2xl md:text-3xl font-light tracking-tight text-ink">
+        Was unsere Ordination auszeichnet.
+      </h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {[
+        'Angstpatienten-Sprechstunde (mittwochs)',
+        '3D-Röntgen (DVT) vor Ort',
+        'Digitaler Zahnabdruck (kein Abdruckmaterial)',
+        'Barrierefreier Zugang',
+        'Klimatisierte Ordination',
+        'Kostenloses WLAN & Kaffee im Wartebereich',
+      ].map((feature) => (
+        <div class="flex items-center gap-3 p-4 bg-surface-elevated rounded-sm border border-ink/8">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand/60 shrink-0" aria-hidden="true"></span>
+          <span class="text-sm text-ink/70">{feature}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CTA BANNER
+  ══════════════════════════════════════════════════ -->
+  <section class="max-w-7xl mx-auto px-6 pb-24">
+    <div
+      class="relative overflow-hidden rounded-sm px-8 py-16 md:px-16 md:py-20 texture-grain bg-brand"
+      style="box-shadow: 0 4px 16px rgba(139,111,71,0.20);"
+    >
+      <div
+        class="absolute inset-0 pointer-events-none"
+        style="background: radial-gradient(ellipse 50% 80% at 80% 50%, rgba(255,255,255,0.06) 0%, transparent 70%);"
+        aria-hidden="true"
+      ></div>
+      <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+        <div class="max-w-lg">
+          <h2 class="font-display text-3xl md:text-4xl font-light tracking-tight text-surface-base mb-4" style="line-height: 1.15;">
+            Noch Fragen zu unseren Leistungen?
+          </h2>
+          <p class="text-surface-base/70 text-sm leading-body">
+            Wir beraten Sie gerne persönlich. Kontaktieren Sie uns oder vereinbaren Sie direkt einen Termin.
+          </p>
+        </div>
+        <a
+          href="/kontakt"
+          class="shrink-0 inline-flex items-center gap-2 px-7 py-3.5 bg-surface-base text-brand text-sm font-medium rounded-sm hover:bg-surface-elevated active:opacity-90 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-surface-base"
+          style="box-shadow: 0 2px 8px rgba(0,0,0,0.12);"
+        >
+          Termin vereinbaren
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

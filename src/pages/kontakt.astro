@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<BaseLayout
+  title="Kontakt & Terminvereinbarung – Zahnmedizin am Stadtpark"
+  description="Vereinbaren Sie Ihren Termin bei Dr. Lena Hofer & Kollegen – Zahnmedizin am Stadtpark, 1030 Wien. Mo–Do 8–18 Uhr, Fr 8–14 Uhr."
+>
+  <section class="max-w-7xl mx-auto px-6 py-20 md:py-28">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-16">
+
+      <!-- Linke Seite: Info -->
+      <div class="lg:col-span-2">
+        <span class="inline-block text-xs font-medium tracking-widest uppercase text-brand/70 mb-6">
+          Kontakt
+        </span>
+        <h1 class="font-display text-4xl md:text-5xl font-light tracking-tight text-ink leading-heading mb-6">
+          Termin vereinbaren.
+        </h1>
+        <p class="text-ink/55 leading-body mb-10">
+          Füllen Sie das Formular aus oder rufen Sie uns direkt an. Wir melden uns in der Regel noch am selben Werktag.
+        </p>
+
+        <!-- Kontaktdaten -->
+        <dl class="space-y-5">
+          <div>
+            <dt class="text-xs font-medium uppercase tracking-widest text-ink/40 mb-1">E-Mail</dt>
+            <dd>
+              <a
+                href="mailto:ordination@zahnmedizin-stadtpark.at"
+                class="text-sm text-ink/70 hover:text-brand transition-colors duration-200 focus-visible:outline-brand"
+              >
+                ordination@zahnmedizin-stadtpark.at
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="text-xs font-medium uppercase tracking-widest text-ink/40 mb-1">Telefon</dt>
+            <dd>
+              <a
+                href="tel:+4317134890"
+                class="text-sm text-ink/70 hover:text-brand transition-colors duration-200 focus-visible:outline-brand"
+              >
+                +43 1 713 48 90
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="text-xs font-medium uppercase tracking-widest text-ink/40 mb-1">Notfall (außerhalb der Zeiten)</dt>
+            <dd>
+              <a
+                href="tel:+4317134891"
+                class="text-sm text-ink/70 hover:text-brand transition-colors duration-200 focus-visible:outline-brand"
+              >
+                +43 1 713 48 91
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="text-xs font-medium uppercase tracking-widest text-ink/40 mb-1">Adresse</dt>
+            <dd class="text-sm text-ink/70 not-italic">
+              Landstraßer Hauptstraße 28/3<br />
+              1030 Wien
+            </dd>
+          </div>
+          <div>
+            <dt class="text-xs font-medium uppercase tracking-widest text-ink/40 mb-1">Ordinationszeiten</dt>
+            <dd class="text-sm text-ink/70 space-y-1">
+              <div class="flex justify-between gap-4">
+                <span>Mo – Do</span>
+                <span class="font-medium text-ink">8:00 – 18:00 Uhr</span>
+              </div>
+              <div class="flex justify-between gap-4">
+                <span>Freitag</span>
+                <span class="font-medium text-ink">8:00 – 14:00 Uhr</span>
+              </div>
+              <div class="flex justify-between gap-4">
+                <span>Sa – So</span>
+                <span class="text-ink/40">geschlossen</span>
+              </div>
+            </dd>
+          </div>
+          <div>
+            <dt class="text-xs font-medium uppercase tracking-widest text-ink/40 mb-1">Kassen</dt>
+            <dd class="text-sm text-ink/70">Wahlarzt-Ordination &amp; Vertragspartner ÖGK</dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Rechte Seite: Formular -->
+      <div
+        class="lg:col-span-3 bg-surface-elevated rounded-sm p-8 md:p-10 border border-ink/8"
+        style="box-shadow: 0 4px 16px rgba(139,111,71,0.08);"
+      >
+        <h2 class="font-display text-2xl font-light tracking-tight text-ink mb-2">Termin anfragen</h2>
+        <p class="text-sm text-ink/55 leading-body mb-8">
+          Füllen Sie das Formular aus — wir melden uns in der Regel noch am selben Werktag bei Ihnen.
+        </p>
+        <ContactForm />
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /datenschutz
+Disallow: /impressum
+Disallow: /danke
+
+Sitemap: https://www.zahnmedizin-stadtpark.at/sitemap-index.xml

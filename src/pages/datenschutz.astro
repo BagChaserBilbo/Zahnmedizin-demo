@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Datenschutzerklärung"
+  description="Datenschutzerklärung gemäß DSGVO."
+  noIndex={true}
+>
+  <article class="max-w-3xl mx-auto px-6 py-20 md:py-28 prose">
+    <h1>Datenschutzerklärung</h1>
+    <p>
+      Zuletzt aktualisiert: <strong>März 2026</strong>
+    </p>
+
+    <h2>1. Verantwortlicher</h2>
+    <p>
+      Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:<br />
+      <strong>Dr. Lena Hofer &amp; Kollegen – Zahnmedizin am Stadtpark</strong><br />
+      Landstraßer Hauptstraße 28/3<br />
+      1030 Wien<br />
+      Österreich<br />
+      <br />
+      E-Mail: <a href="mailto:ordination@zahnmedizin-stadtpark.at">ordination@zahnmedizin-stadtpark.at</a><br />
+      Telefon: +43 1 713 48 90
+    </p>
+
+    <h2>2. Erhebung und Verarbeitung personenbezogener Daten</h2>
+    <p>
+      Wir verarbeiten personenbezogene Daten nur, wenn Sie uns diese aktiv mitteilen (z.B. über das Kontaktformular) oder wenn die Verarbeitung gesetzlich erlaubt ist.
+    </p>
+
+    <h3>Kontaktformular</h3>
+    <p>
+      Wenn Sie unser Kontaktformular nutzen, verarbeiten wir folgende Daten:
+    </p>
+    <ul>
+      <li>Vorname und Nachname</li>
+      <li>E-Mail-Adresse</li>
+      <li>Telefonnummer (freiwillig)</li>
+      <li>Inhalt Ihrer Nachricht</li>
+    </ul>
+    <p>
+      <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) und/oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen).
+    </p>
+
+    <h3>Server-Logfiles</h3>
+    <p>
+      Beim Besuch dieser Website werden automatisch Informationen in sogenannten Server-Logfiles gespeichert. Diese umfassen: IP-Adresse, Datum/Uhrzeit des Zugriffs, aufgerufene URL, Browsertyp und -version. Eine Zusammenführung mit anderen Datenquellen findet nicht statt.
+    </p>
+
+    <h2>3. Cookies</h2>
+    <p>
+      Diese Website verwendet Cookies. Beim ersten Besuch wird Ihnen ein Cookie-Banner angezeigt, über den Sie der Nutzung von nicht-notwendigen Cookies zustimmen oder diese ablehnen können.
+    </p>
+    <p>
+      <strong>Notwendige Cookies:</strong> Diese Cookies sind für den Betrieb der Website erforderlich und können nicht abgelehnt werden. Sie enthalten keine personenbezogenen Daten.
+    </p>
+    <p>
+      <strong>Analyse-Cookies:</strong> Nur mit Ihrer Einwilligung. Dienen zur Analyse des Nutzerverhaltens.
+    </p>
+    <p>
+      Sie können Ihre Einwilligung jederzeit widerrufen:
+    </p>
+    <p>
+      <button
+        id="reset-cookies"
+        type="button"
+        class="underline underline-offset-2 text-brand hover:text-brand-light transition-colors duration-200 cursor-pointer focus-visible:outline-brand"
+      >
+        Cookie-Einstellungen zurücksetzen
+      </button>
+    </p>
+
+    <h2>4. Weitergabe von Daten</h2>
+    <p>
+      Wir geben Ihre personenbezogenen Daten nicht ohne Ihre ausdrückliche Einwilligung an Dritte weiter, es sei denn, dies ist zur Vertragserfüllung erforderlich oder gesetzlich vorgeschrieben.
+    </p>
+    <p>
+      <strong>Netlify:</strong> Diese Website wird über Netlify Inc. (San Francisco, USA) gehostet. Netlify verarbeitet technische Daten für den Betrieb der Website. Die Übermittlung erfolgt auf Basis von Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO). Weitere Informationen: <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener noreferrer">Netlify Privacy Policy</a>.
+    </p>
+
+    <h2>5. Ihre Rechte (Betroffenenrechte)</h2>
+    <p>Sie haben folgende Rechte bezüglich Ihrer personenbezogenen Daten:</p>
+    <ul>
+      <li><strong>Auskunft</strong> (Art. 15 DSGVO): Sie können Auskunft über Ihre gespeicherten Daten verlangen.</li>
+      <li><strong>Berichtigung</strong> (Art. 16 DSGVO): Sie können die Berichtigung unrichtiger Daten verlangen.</li>
+      <li><strong>Löschung</strong> (Art. 17 DSGVO): Sie können die Löschung Ihrer Daten verlangen.</li>
+      <li><strong>Einschränkung</strong> (Art. 18 DSGVO): Sie können die Einschränkung der Verarbeitung verlangen.</li>
+      <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO): Sie können Ihre Daten in maschinenlesbarer Form erhalten.</li>
+      <li><strong>Widerspruch</strong> (Art. 21 DSGVO): Sie können der Verarbeitung Ihrer Daten widersprechen.</li>
+      <li><strong>Widerruf</strong>: Erteilte Einwilligungen können Sie jederzeit widerrufen.</li>
+    </ul>
+    <p>
+      Zur Ausübung Ihrer Rechte wenden Sie sich an: <a href="mailto:ordination@zahnmedizin-stadtpark.at">ordination@zahnmedizin-stadtpark.at</a>
+    </p>
+    <p>
+      Sie haben außerdem das Recht, sich bei der österreichischen Datenschutzbehörde zu beschweren:<br />
+      <a href="https://www.dsb.gv.at" target="_blank" rel="noopener noreferrer">www.dsb.gv.at</a>
+    </p>
+
+    <h2>6. Datensicherheit</h2>
+    <p>
+      Diese Website nutzt HTTPS-Verschlüsselung. Ihre Daten werden während der Übertragung verschlüsselt.
+    </p>
+
+    <h2>7. Änderungen dieser Datenschutzerklärung</h2>
+    <p>
+      Wir behalten uns vor, diese Datenschutzerklärung anzupassen, wenn sich die Rechtslage oder Datenverarbeitungsvorgänge ändern. Die jeweils aktuelle Version ist auf dieser Seite abrufbar.
+    </p>
+  </article>
+</BaseLayout>
+
+<script>
+  document.getElementById('reset-cookies')?.addEventListener('click', () => {
+    try {
+      localStorage.removeItem('cookie_consent');
+    } catch {
+      document.cookie = 'cookie_consent=; max-age=0; path=/';
+    }
+    window.location.reload();
+  });
+</script>

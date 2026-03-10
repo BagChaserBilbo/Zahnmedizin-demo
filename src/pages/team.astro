@@ -1,0 +1,300 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const teamMembers = [
+  {
+    name: 'Dr. Lena Hofer',
+    role: 'Gründerin & Zahnärztin',
+    bio: 'Studium an der MedUni Wien, Fortbildungen in Berlin und Zürich. Seit 2016 leitet Dr. Hofer die Ordination mit Leidenschaft für ästhetische Zahnmedizin und Implantologie.',
+    image: 'https://placehold.co/400x500/F0EAE0/8B6F47',
+    focus: ['Ästhetische Zahnmedizin', 'Implantologie'],
+    years: '15 Jahre Erfahrung',
+  },
+  {
+    name: 'Dr. Markus Brandner',
+    role: 'Zahnarzt',
+    bio: 'Spezialist für komplexe Wurzelbehandlungen und Parodontologie. Mit ruhiger Hand und modernster Endodontie-Technik sorgt er für nachhaltig gesunde Zähne.',
+    image: 'https://placehold.co/400x500/F0EAE0/8B6F47',
+    focus: ['Endodontie', 'Parodontologie'],
+    years: '10 Jahre Erfahrung',
+  },
+  {
+    name: 'Dr. Sara Yilmaz',
+    role: 'Zahnärztin',
+    bio: 'Spezialistin für Kinderzahnheilkunde und Prophylaxe. Sie schafft eine spielerische, angstfreie Atmosphäre für die kleinsten Patientinnen und Patienten.',
+    image: 'https://placehold.co/400x500/F0EAE0/8B6F47',
+    focus: ['Kinderzahnheilkunde', 'Prophylaxe'],
+    years: '6 Jahre Erfahrung',
+  },
+  {
+    name: 'Lisa Neumayer',
+    role: 'Dentalhygienikerin',
+    bio: 'Professionelle Zahnreinigung und individuelle Mundhygiene-Beratung — für Ihre langfristige Zahngesundheit und strahlendes Lächeln.',
+    image: 'https://placehold.co/400x500/F0EAE0/8B6F47',
+    focus: ['Professionelle Zahnreinigung', 'Prophylaxe-Beratung'],
+    years: null,
+  },
+  {
+    name: 'Julia Pichler',
+    role: 'Ordinationsassistentin & Empfang',
+    bio: 'Das freundliche Gesicht am Empfang — Julia koordiniert Termine und sorgt dafür, dass Sie sich vom ersten Moment an wohlfühlen.',
+    image: 'https://placehold.co/400x500/F0EAE0/8B6F47',
+    focus: ['Terminkoordination', 'Patientenempfang'],
+    years: null,
+  },
+  {
+    name: 'Thomas Ertl',
+    role: 'Ordinationsassistent & Röntgen',
+    bio: 'Zuständig für Röntgenaufnahmen und einen reibungslosen Praxisablauf im Hintergrund.',
+    image: 'https://placehold.co/400x500/F0EAE0/8B6F47',
+    focus: ['Röntgen', 'Praxisorganisation'],
+    years: null,
+  },
+];
+
+const werte = [
+  {
+    label: 'Vertrauen',
+    text: 'Transparente Beratung, klare Kostenvoranschläge und eine Atmosphäre, in der Sie sich wohl und sicher fühlen.',
+  },
+  {
+    label: 'Kompetenz',
+    text: 'Laufende Fortbildungen, modernste Technik und evidenzbasierte Behandlungsmethoden auf höchstem Niveau.',
+  },
+  {
+    label: 'Wohlfühlen',
+    text: 'Kein Stress, kein Fließband — wir nehmen uns Zeit. Denn ein Arztbesuch kann auch angenehm sein.',
+  },
+];
+---
+
+<BaseLayout
+  title="Über uns & Team – Zahnmedizin am Stadtpark"
+  description="Lernen Sie das Team der Zahnarztpraxis Dr. Lena Hofer & Kollegen kennen. Erfahrene Zahnärztinnen und Zahnärzte im 3. Wiener Bezirk."
+>
+
+  <!-- ═══════════════════════════════════════════════
+       PAGE HEADER
+  ══════════════════════════════════════════════════ -->
+  <section
+    class="relative texture-grain overflow-hidden border-b border-ink/8"
+    style="background: radial-gradient(ellipse 70% 60% at 15% 50%, rgba(139,111,71,0.08) 0%, transparent 70%), #FAF7F2;"
+  >
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-20 md:py-28">
+      <span class="inline-block text-xs font-medium tracking-widest uppercase text-brand/70 mb-6">
+        Über uns
+      </span>
+      <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-ink max-w-2xl mb-6" style="line-height: 1.1;">
+        Menschen hinter dem Lächeln.
+      </h1>
+      <p class="text-ink/60 text-lg leading-body max-w-xl">
+        Moderne Zahnmedizin mit Wiener Herzlichkeit — unser Team aus dem 3. Bezirk legt größten Wert auf Vertrauen, Fachkompetenz und eine angenehme Atmosphäre.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       PRAXIS-STORY & WERTE
+  ══════════════════════════════════════════════════ -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-b border-ink/8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+      <!-- Links: Über die Praxis -->
+      <div>
+        <span class="inline-block text-xs font-medium tracking-widest uppercase text-brand/60 mb-4">Über die Praxis</span>
+        <h2 class="font-display text-2xl md:text-3xl font-light tracking-tight text-ink mb-6">
+          Seit 2016 im Herzen des 3. Bezirks.
+        </h2>
+        <div class="space-y-4 text-sm text-ink/60 leading-body">
+          <p>
+            Die Ordination wurde 2016 von Dr. Lena Hofer gegründet und befindet sich in hellen, modernen Räumlichkeiten unweit des Wiener Stadtparks.
+          </p>
+          <p>
+            Unser Anspruch ist eine einfühlsame, evidenzbasierte Zahnmedizin in entspannter Atmosphäre. Wir nehmen uns Zeit für jede Patientin und jeden Patienten und setzen auf transparente Beratung, schonende Behandlungsmethoden und modernste Technik.
+          </p>
+          <p>
+            Wir sind Wahlarzt-Ordination und Vertragspartner der ÖGK.
+          </p>
+        </div>
+
+        <!-- Besonderheiten -->
+        <div class="mt-8 space-y-2">
+          {[
+            'Angstpatienten-Sprechstunde (mittwochs)',
+            '3D-Röntgen (DVT) vor Ort',
+            'Digitaler Zahnabdruck — kein Abdruckmaterial',
+            'Barrierefreier Zugang',
+            'Klimatisiert · WLAN · Kaffee & Wasser',
+          ].map((item) => (
+            <div class="flex items-center gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand/60 shrink-0" aria-hidden="true"></span>
+              <span class="text-sm text-ink/60">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Rechts: Werte -->
+      <div class="space-y-6">
+        {werte.map((w) => (
+          <div class="p-6 bg-surface-elevated rounded-sm border border-ink/8 border-l-2 border-l-brand/40"
+               style="box-shadow: 0 2px 8px rgba(139,111,71,0.05);">
+            <h3 class="font-display text-lg font-medium tracking-tight text-ink mb-2">{w.label}</h3>
+            <p class="text-sm text-ink/55 leading-body">{w.text}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       TEAM-GRID
+  ══════════════════════════════════════════════════ -->
+  <section class="max-w-7xl mx-auto px-6 py-20">
+    <div class="mb-14">
+      <span class="inline-block text-xs font-medium tracking-widest uppercase text-brand/60 mb-4">Das Team</span>
+      <h2 class="font-display text-3xl md:text-4xl font-light tracking-tight text-ink">
+        Ihre Ansprechpersonen.
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      {teamMembers.map((member) => (
+        <div class="group">
+          <!-- Bild mit Gradient-Overlay -->
+          <div
+            class="relative overflow-hidden rounded-sm mb-5"
+            style="aspect-ratio: 4/5; box-shadow: 0 2px 8px rgba(139,111,71,0.08);"
+          >
+            <img
+              src={member.image}
+              alt={`Foto von ${member.name}`}
+              class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500 ease-out"
+              width="400"
+              height="500"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"
+              aria-hidden="true"
+            ></div>
+          </div>
+
+          <!-- Info -->
+          <h3 class="font-display text-xl font-medium tracking-tight text-ink mb-1">
+            {member.name}
+          </h3>
+          <p class="text-xs font-medium uppercase tracking-widest text-brand/70 mb-3">
+            {member.role}
+          </p>
+          <p class="text-sm text-ink/55 leading-body mb-4">{member.bio}</p>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2">
+            {member.focus.map((f) => (
+              <span class="text-xs px-2.5 py-1 bg-brand/8 text-brand rounded-full font-medium">
+                {f}
+              </span>
+            ))}
+            {member.years && (
+              <span class="text-xs px-2.5 py-1 bg-ink/5 text-ink/50 rounded-full">
+                {member.years}
+              </span>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       ÖFFNUNGSZEITEN & ANFAHRT
+  ══════════════════════════════════════════════════ -->
+  <section class="max-w-7xl mx-auto px-6 py-16 border-t border-ink/8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+      <!-- Öffnungszeiten -->
+      <div>
+        <span class="inline-block text-xs font-medium tracking-widest uppercase text-brand/60 mb-4">Ordinationszeiten</span>
+        <dl class="space-y-3">
+          <div class="flex justify-between items-center py-2 border-b border-ink/8">
+            <dt class="text-sm text-ink/60">Mo – Do</dt>
+            <dd class="text-sm font-medium text-ink">8:00 – 18:00 Uhr</dd>
+          </div>
+          <div class="flex justify-between items-center py-2 border-b border-ink/8">
+            <dt class="text-sm text-ink/60">Freitag</dt>
+            <dd class="text-sm font-medium text-ink">8:00 – 14:00 Uhr</dd>
+          </div>
+          <div class="flex justify-between items-center py-2 border-b border-ink/8">
+            <dt class="text-sm text-ink/60">Sa – So</dt>
+            <dd class="text-sm text-ink/40">geschlossen</dd>
+          </div>
+          <div class="flex justify-between items-center py-2">
+            <dt class="text-sm text-ink/60">Notfall (außerhalb)</dt>
+            <dd class="text-sm font-medium text-ink">
+              <a href="tel:+4317134891" class="hover:text-brand transition-colors duration-200">+43 1 713 48 91</a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Anfahrt -->
+      <div>
+        <span class="inline-block text-xs font-medium tracking-widest uppercase text-brand/60 mb-4">Anfahrt</span>
+        <address class="not-italic text-sm text-ink/60 leading-body mb-6">
+          Landstraßer Hauptstraße 28/3<br />
+          1030 Wien
+        </address>
+        <dl class="space-y-3">
+          <div class="flex items-start gap-3">
+            <dt class="text-xs font-medium uppercase tracking-wide text-brand/60 w-10 shrink-0 pt-0.5">U</dt>
+            <dd class="text-sm text-ink/60">U3 / U4 Station Landstraße–Wien Mitte (5 Min. Fußweg)</dd>
+          </div>
+          <div class="flex items-start gap-3">
+            <dt class="text-xs font-medium uppercase tracking-wide text-brand/60 w-10 shrink-0 pt-0.5">Str.</dt>
+            <dd class="text-sm text-ink/60">Linie O, Station Landstraßer Hauptstraße</dd>
+          </div>
+          <div class="flex items-start gap-3">
+            <dt class="text-xs font-medium uppercase tracking-wide text-brand/60 w-10 shrink-0 pt-0.5">P</dt>
+            <dd class="text-sm text-ink/60">Parkgarage Hilton Vienna direkt ums Eck</dd>
+          </div>
+        </dl>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CTA BANNER
+  ══════════════════════════════════════════════════ -->
+  <section class="max-w-7xl mx-auto px-6 pb-24">
+    <div
+      class="relative overflow-hidden rounded-sm px-8 py-16 md:px-16 md:py-20 texture-grain bg-brand"
+      style="box-shadow: 0 4px 16px rgba(139,111,71,0.20);"
+    >
+      <div
+        class="absolute inset-0 pointer-events-none"
+        style="background: radial-gradient(ellipse 50% 80% at 80% 50%, rgba(255,255,255,0.06) 0%, transparent 70%);"
+        aria-hidden="true"
+      ></div>
+      <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+        <div class="max-w-lg">
+          <h2 class="font-display text-3xl md:text-4xl font-light tracking-tight text-surface-base mb-4" style="line-height: 1.15;">
+            Lernen Sie uns persönlich kennen.
+          </h2>
+          <p class="text-surface-base/70 text-sm leading-body">
+            Wir freuen uns auf Ihren Besuch. Vereinbaren Sie unkompliziert Ihren ersten Termin.
+          </p>
+        </div>
+        <a
+          href="/kontakt"
+          class="shrink-0 inline-flex items-center gap-2 px-7 py-3.5 bg-surface-base text-brand text-sm font-medium rounded-sm hover:bg-surface-elevated active:opacity-90 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-surface-base"
+          style="box-shadow: 0 2px 8px rgba(0,0,0,0.12);"
+        >
+          Termin vereinbaren
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

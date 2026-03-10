@@ -1,0 +1,147 @@
+---
+const navLinks = [
+  { label: 'Start', href: '/' },
+  { label: 'Leistungen', href: '/leistungen' },
+  { label: 'Über uns', href: '/team' },
+  { label: 'Kontakt', href: '/kontakt' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header
+  class="sticky top-0 z-50 bg-surface-base/85 backdrop-blur-md border-b border-ink/8"
+  style="box-shadow: 0 1px 2px rgba(139,111,71,0.06), 0 2px 8px rgba(139,111,71,0.04);"
+>
+  <nav class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <!-- Logo / Firmenname -->
+    <a
+      href="/"
+      class="font-display text-xl font-semibold tracking-tight text-ink hover:text-brand transition-colors duration-200"
+      aria-label="Zur Startseite"
+    >
+      Zahnmedizin am Stadtpark
+    </a>
+
+    <!-- Desktop Navigation -->
+    <ul class="hidden md:flex items-center gap-8" role="list">
+      {navLinks.map((link) => {
+        const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+        return (
+          <li>
+            <a
+              href={link.href}
+              aria-current={isActive ? 'page' : undefined}
+              class={`text-sm font-medium transition-colors duration-200 focus-visible:outline-brand ${
+                isActive
+                  ? 'text-brand'
+                  : 'text-ink/60 hover:text-ink'
+              }`}
+            >
+              {link.label}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+
+    <!-- CTA Button (Desktop) -->
+    <a
+      href="/kontakt"
+      class="hidden md:inline-flex items-center px-5 py-2 text-sm font-medium text-surface-base bg-brand rounded-sm hover:bg-brand-light active:bg-brand-dark transition-colors duration-200 focus-visible:outline-brand"
+      style="box-shadow: 0 1px 2px rgba(139,111,71,0.12);"
+    >
+      Termin vereinbaren
+    </a>
+
+    <!-- Hamburger (Mobile) -->
+    <button
+      id="menu-toggle"
+      type="button"
+      aria-label="Menü öffnen"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      class="md:hidden w-8 h-8 flex flex-col justify-center gap-1.5 focus-visible:outline-brand"
+    >
+      <span class="menu-line block h-px w-6 bg-ink origin-center transition-transform duration-300 ease-out"></span>
+      <span class="menu-line block h-px w-6 bg-ink transition-opacity duration-200"></span>
+      <span class="menu-line block h-px w-6 bg-ink origin-center transition-transform duration-300 ease-out"></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu Panel -->
+  <div
+    id="mobile-menu"
+    role="navigation"
+    aria-label="Mobile Navigation"
+    class="hidden md:hidden border-t border-ink/8 bg-surface-base"
+  >
+    <ul class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1" role="list">
+      {navLinks.map((link) => {
+        const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+        return (
+          <li>
+            <a
+              href={link.href}
+              aria-current={isActive ? 'page' : undefined}
+              class={`block py-2.5 text-sm font-medium transition-colors duration-200 focus-visible:outline-brand ${
+                isActive ? 'text-brand' : 'text-ink/70 hover:text-ink'
+              }`}
+            >
+              {link.label}
+            </a>
+          </li>
+        );
+      })}
+      <li class="pt-3 border-t border-ink/8 mt-2">
+        <a
+          href="/kontakt"
+          class="block py-2.5 text-sm font-medium text-brand hover:text-brand-light transition-colors duration-200"
+        >
+          Termin vereinbaren →
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle') as HTMLButtonElement | null;
+  const menu = document.getElementById('mobile-menu') as HTMLElement | null;
+  const lines = toggle?.querySelectorAll('.menu-line') as NodeListOf<HTMLElement> | undefined;
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    const nextOpen = !isOpen;
+
+    toggle.setAttribute('aria-expanded', String(nextOpen));
+    toggle.setAttribute('aria-label', nextOpen ? 'Menü schließen' : 'Menü öffnen');
+    menu?.classList.toggle('hidden', !nextOpen);
+
+    if (lines) {
+      if (nextOpen) {
+        lines[0].style.transform = 'rotate(45deg) translateY(4px)';
+        lines[1].style.opacity = '0';
+        lines[2].style.transform = 'rotate(-45deg) translateY(-4px)';
+      } else {
+        lines[0].style.transform = '';
+        lines[1].style.opacity = '';
+        lines[2].style.transform = '';
+      }
+    }
+  });
+
+  // Menü bei Resize schließen
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+      toggle?.setAttribute('aria-expanded', 'false');
+      toggle?.setAttribute('aria-label', 'Menü öffnen');
+      menu?.classList.add('hidden');
+      if (lines) {
+        lines[0].style.transform = '';
+        lines[1].style.opacity = '';
+        lines[2].style.transform = '';
+      }
+    }
+  });
+</script>

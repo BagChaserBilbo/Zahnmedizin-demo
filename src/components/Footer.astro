@@ -1,0 +1,47 @@
+---
+const year = new Date().getFullYear();
+const siteName = import.meta.env.PUBLIC_SITE_NAME ?? 'Dr. Lena Hofer & Kollegen – Zahnmedizin am Stadtpark';
+
+const footerLinks = [
+  { label: 'Leistungen', href: '/leistungen' },
+  { label: 'Datenschutz', href: '/datenschutz' },
+  { label: 'Impressum', href: '/impressum' },
+  { label: 'Kontakt', href: '/kontakt' },
+];
+---
+
+<footer class="border-t border-ink/8 bg-surface-base mt-24">
+  <div
+    class="max-w-7xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-6"
+  >
+    <!-- Linke Seite: Logo + Copyright -->
+    <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
+      <a
+        href="/"
+        class="font-display text-base font-semibold tracking-tight text-ink hover:text-brand transition-colors duration-200"
+      >
+        {siteName}
+      </a>
+      <span class="hidden sm:block text-ink/20">|</span>
+      <p class="text-sm text-ink/40">
+        &copy; {year} {siteName}. Alle Rechte vorbehalten.
+      </p>
+    </div>
+
+    <!-- Rechte Seite: Links -->
+    <nav aria-label="Footer Navigation">
+      <ul class="flex flex-wrap items-center justify-center gap-6" role="list">
+        {footerLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="text-sm text-ink/40 hover:text-brand transition-colors duration-200 focus-visible:outline-brand"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</footer>

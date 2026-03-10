@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Vielen Dank"
+  description="Ihre Nachricht wurde erfolgreich übermittelt. Wir melden uns bald."
+  noIndex={true}
+>
+  <section class="max-w-7xl mx-auto px-6 py-32 md:py-44 flex items-center justify-center min-h-[60vh]">
+    <div class="text-center max-w-xl">
+      <!-- Icon -->
+      <div
+        class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand/10 mb-8"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+             fill="none" stroke="#8B6F47" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true">
+          <path d="M20 6 9 17l-5-5"/>
+        </svg>
+      </div>
+
+      <h1 class="font-display text-4xl md:text-5xl font-light tracking-tight text-ink mb-5">
+        Vielen Dank!
+      </h1>
+      <p class="text-ink/55 leading-body mb-10">
+        Ihre Terminanfrage ist bei uns angekommen. Wir melden uns in der Regel noch am selben Werktag. Bei dringenden Anliegen erreichen Sie uns unter <a href="tel:+4317134891" class="text-brand underline underline-offset-2 hover:text-brand-light">+43 1 713 48 91</a>.
+      </p>
+      <a
+        href="/"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-brand text-surface-base text-sm font-medium rounded-sm hover:bg-brand-light active:bg-brand-dark transition-colors duration-200 focus-visible:outline-brand"
+      >
+        ← Zurück zur Startseite
+      </a>
+    </div>
+  </section>
+</BaseLayout>
